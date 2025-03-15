@@ -13,7 +13,7 @@ function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary better-shadow">
       <Container>
-      <Navbar.Brand href="#home" className='mx-3'>
+      <Navbar.Brand href="/" className='mx-3'>
             <img
               alt=""
               src={Logo}

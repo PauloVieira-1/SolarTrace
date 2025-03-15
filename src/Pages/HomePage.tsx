@@ -19,7 +19,7 @@ function HomePage() {
             <Button className="btn" onClick={() => {}} variant="secondary">Course</Button>
             </Col>
             <Col xs={4}>
-            <Button className="btn" onClick={() => {}} variant="secondary">Process</Button>
+            <Button className="btn" onClick={() => {}} variant="outline-secondary">Process</Button>
             </Col>
             <Col xs={4}>
             <Button className="btn" onClick={() => {}} variant="secondary">Partners</Button>
