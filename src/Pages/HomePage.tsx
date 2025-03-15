@@ -1,0 +1,33 @@
+import { Container, Col, Row } from "react-bootstrap"
+import Button from "../Components/Button"
+function HomePage() {
+    return ( 
+        <div className="bg-light pt-3" style={{height: "90vh"}}>
+            <div className="text-center my-5">
+                <h3 className="fw-bold text-primary">Explore Our Available Tools</h3>
+                <h6 className="fw-light text-secondary">Understand Your Solarwatt Products Better With SolarTrace</h6>
+            </div>
+        <Container className="bg-primary text-center rounded-5 mx-5 py-5 text-white">
+            <Row className="pb-3">
+            <div className="p-5">
+                <h1 className="display-2 fw-bold">SolarTrace</h1>
+                <h5 className="fw-light">Solar Tracking Service by Solarwatt</h5>
+            </div>
+            </Row>
+            <Row  className="pb-4 px-5 mx-5">
+            <Col xs={4}>
+            <Button className="btn" onClick={() => {}} variant="secondary">Course</Button>
+            </Col>
+            <Col xs={4}>
+            <Button className="btn" onClick={() => {}} variant="secondary">Process</Button>
+            </Col>
+            <Col xs={4}>
+            <Button className="btn" onClick={() => {}} variant="secondary">Partners</Button>
+            </Col>
+            </Row>
+        </Container>
+        </div>
+    )
+}
+
+export default HomePage
