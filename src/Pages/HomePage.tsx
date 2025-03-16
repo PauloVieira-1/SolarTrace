@@ -1,5 +1,6 @@
 import { Container, Col, Row } from "react-bootstrap"
 import Button from "../Components/Button"
+import { Link } from "react-router-dom"
 function HomePage() {
     return ( 
         <div className="bg-light pt-3" style={{height: "90vh"}}>
@@ -22,7 +23,9 @@ function HomePage() {
             <Button className="btn" onClick={() => {}} variant="outline-secondary">Process</Button>
             </Col>
             <Col xs={4}>
+            <Link to="/partners">
             <Button className="btn" onClick={() => {}} variant="secondary">Partners</Button>
+            </Link>
             </Col>
             </Row>
         </Container>
