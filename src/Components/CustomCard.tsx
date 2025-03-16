@@ -9,12 +9,11 @@ function CustomCard({name, imgSrc, onClick}: {name: string, imgSrc: string, onCl
                     <h2 className="fw-bold">{name}</h2>
                 </Col>
             </Row>
-            <Row style={{height: "15rem"}}>
-                <img src={imgSrc} className="card-img-top w-100" alt="...">
-                </img>
+            <Row style={{height: "12rem"}}>
+                <img src={imgSrc} className="card-img-top w-100" alt="..."></img>
             </Row>
             <Row>
-                <ButtonComponent className="btn btn-primary w-100 " onClick={onClick} variant="secondary">Learn More</ButtonComponent>
+                <ButtonComponent className="btn btn-primary w-100 mt-3" onClick={onClick} variant="secondary">Learn More</ButtonComponent>
             </Row>
         </Container>
     )

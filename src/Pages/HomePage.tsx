@@ -3,11 +3,12 @@ import Button from "../Components/Button"
 import { Link } from "react-router-dom"
 function HomePage() {
     return ( 
-        <div className="bg-light pt-3" style={{height: "90vh"}}>
+        <div className="bg-light pt-3 pb-5" style={{height: "90vh"}}>
             <div className="text-center my-5">
                 <h3 className="fw-bold text-primary">Explore Our Available Tools</h3>
                 <h6 className="fw-light text-secondary">Understand Your Solarwatt Products Better With SolarTrace</h6>
             </div>
+        <div className="d-flex justify-content-center">
         <Container className="bg-primary text-center rounded-5 mx-5 py-5 text-white">
             <Row className="pb-3">
             <div className="p-5">
@@ -29,6 +30,7 @@ function HomePage() {
             </Col>
             </Row>
         </Container>
+        </div>
         </div>
     )
 }
