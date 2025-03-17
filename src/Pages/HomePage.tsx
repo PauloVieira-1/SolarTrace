@@ -18,14 +18,16 @@ function HomePage() {
             </Row>
             <Row  className="pb-4 px-5 mx-5">
             <Col xs={4}>
-            <Button className="btn" onClick={() => {}} variant="secondary">Course</Button>
+            <Button className="btn" variant="secondary">Course</Button>
             </Col>
             <Col xs={4}>
-            <Button className="btn" onClick={() => {}} variant="outline-secondary">Process</Button>
+            <Link to="/process">
+            <Button className="btn"  variant="outline-secondary">Process</Button>
+            </Link>
             </Col>
             <Col xs={4}>
             <Link to="/partners">
-            <Button className="btn" onClick={() => {}} variant="secondary">Partners</Button>
+            <Button className="btn" variant="secondary">Partners</Button>
             </Link>
             </Col>
             </Row>

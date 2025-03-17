@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 
 interface ButtonProps {
     className?: string;
-    onClick: () => void;
+    onClick?: () => void;
     children: string;
     variant: "light" | "secondary" | "outline-secondary" | "outline-light";
 }
