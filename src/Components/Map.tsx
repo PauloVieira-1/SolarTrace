@@ -21,7 +21,7 @@ function Map() {
         };
     }, []);
 
-    return <div id="map" style={{ height: '100vh' }} />;
+    return <div id="map" style={{ minHeight: '100vh' }} />;
 }
 
 export default Map;
