@@ -3,7 +3,7 @@ import ButtonComponent from "../Components/Button"
 
 function CustomCard({name, imgSrc, onClick}: {name: string, imgSrc: string, onClick: () => void}) {
     return (
-        <Container className="card mx-5 my-5 bg-primary text-white rounded-5 text-center d-flex p-5 hover-effect" style={{width: "20rem", height: "25rem"}}>
+        <Container className="card mx-5 my-3 bg-primary text-white rounded-5 text-center d-flex p-5 hover-effect" style={{minWidth: "20rem", height: "25rem"}}>
             <Row className="mb-4">
                 <Col>
                     <h2 className="fw-bold">{name}</h2>

@@ -10,7 +10,7 @@ interface ButtonProps {
 function ButtonComponent({ className, onClick, children, variant}: ButtonProps) {
     return (
         <Button
-            className={`btn btn-${variant} ${className} rounded-5 px-5 w-50 text-white py-2`}
+            className={`btn btn-${variant} ${className} rounded-5 px-5 w-0 text-white py-2 text-center`}
             onClick={onClick}
             variant={variant}
         >

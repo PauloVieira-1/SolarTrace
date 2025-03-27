@@ -23,9 +23,19 @@ const MapComponent = () => {
   const { mapRef, MapConsumer } = useMapInstance();
 
   useEffect(() => {
-    if (scrollPosition > 1000 && mapRef.current) {
-      mapRef.current.panTo([51.515, -0.1]); 
+    const positions: Array<LatLngExpression> = [
+      [51.505, -0.09],
+      [52.505, -0.09],
+      [53.505, -0.09],
+      [54.505, -0.09],
+      [55.505, -0.09],
+    ];
+
+    if (mapRef.current && scrollPosition >= 0 && scrollPosition < positions.length * 1000) {
+      const index = Math.floor(scrollPosition / 1000);
+      mapRef.current.panTo(positions[index]);
     }
+
   }, [scrollPosition, mapRef]);
 
   return (
