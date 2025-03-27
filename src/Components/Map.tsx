@@ -1,27 +1,46 @@
-import { useEffect, useRef } from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import { useEffect, useRef } from "react";
+import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import useScrollPosition from "./useScrollPosition";
 
-function Map() {
-    const mapRef = useRef<L.Map | null>(null);
+type LatLngExpression = [number, number];
 
-    useEffect(() => {
-        if (mapRef.current) return;
-        const map = L.map('map').setView([51.505, -0.09], 3.1);
-        mapRef.current = map; 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+const position: LatLngExpression = [51.505, -0.09];
 
-        const marker = L.marker([51.5, -0.09]).addTo(map);
-        marker.bindPopup('TEST').openPopup();
+const useMapInstance = () => {
+  const mapRef = useRef<any | null>(null);
+  const MapConsumer = () => {
+    const map = useMap();
+    mapRef.current = map;
+    return null; 
+  };
+  return { mapRef, MapConsumer };
+};
 
-        return () => {
-            map.remove(); 
-        };
-    }, []);
+const MapComponent = () => {
+  const scrollPosition: number = useScrollPosition();
+  const { mapRef, MapConsumer } = useMapInstance();
 
-    return <div id="map" style={{ minHeight: '100vh' }} />;
-}
+  useEffect(() => {
+    if (scrollPosition > 1000 && mapRef.current) {
+      mapRef.current.panTo([51.515, -0.1]); 
+    }
+  }, [scrollPosition, mapRef]);
 
-export default Map;
+  return (
+    <MapContainer
+      center={position}
+      zoom={13}
+      style={{ height: "500px", width: "100%" }}
+      scrollWheelZoom={false}
+    >
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <Marker position={position}>
+        <Popup>TEST</Popup>
+      </Marker>
+      <MapConsumer />
+    </MapContainer>
+  );
+};
+
+export default MapComponent;
