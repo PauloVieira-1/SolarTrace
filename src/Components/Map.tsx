@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, useMap, Marker, Popup} from "react-leaflet";
+import { Map } from "leaflet";
+import  "leaflet/dist/leaflet.css";
 import useScrollPosition from "./useScrollPosition";
 
 type LatLngExpression = [number, number];
@@ -8,7 +9,7 @@ type LatLngExpression = [number, number];
 const position: LatLngExpression = [51.505, -0.09];
 
 const useMapInstance = () => {
-  const mapRef = useRef<any | null>(null);
+  const mapRef = useRef<Map>(null);
   const MapConsumer = () => {
     const map = useMap();
     mapRef.current = map;
