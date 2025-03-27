@@ -16,7 +16,7 @@ function App() {
 				<Route path="/partners" element={<Partners />} />
 				<Route path="/process" element={<Process />} />
 			</Routes>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

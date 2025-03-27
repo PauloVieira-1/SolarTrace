@@ -1,5 +1,5 @@
 import Map from "../Components/Map"
-import { Container, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import Background from "../assets/background1.png"
 import ButtonComponent from "../Components/Button.tsx"
 
@@ -30,14 +30,13 @@ function Process() {
     </div>
 </div>
 
-        <Container fluid className="d-flex flex-column align-items-center mb-5 mt-4">
+        <div  className="d-flex flex-column align-items-center mb-0 mt-4">
             <Row className="d-flex justify-content-center align-items-center w-100">
-
             </Row>
             <Row className="d-flex justify-content-center align-items-center w-100 mt-4">
                 <Map></Map>
             </Row>
-        </Container>
+        </div>
         </>
     )    
 }
