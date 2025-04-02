@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import { Map } from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -77,21 +77,27 @@ const MapComponent = () => {
   const { mapRef, MapConsumer } = useMapInstance();
   const [currentOveraly, setCurrentOverlay] = useState(overlay);
 
+  const positions = useMemo<({ coordinates: LatLngExpression; text: string }[])>(() => [
+      { coordinates: [51.89, 5.43], text: 'Solarwatt Tiel Facility, Netherlands (Starting Position)' },
+      { coordinates: [36.56, 101.43], text: 'Raw Material Extraction - Qinghai, China' },
+      { coordinates: [40.65, 109.84], text: 'Ingot Manufacturing - Baotou, Inner Mongolia, China' },
+      { coordinates: [32.06, 118.78], text: 'Wafer Slicing - Jiangsu, China' },
+      { coordinates: [30.57, 104.06], text: 'Solar Cell Production - Sichuan, China' },
+      { coordinates: [32.06, 118.78], text: 'Module Assembly - Jiangsu, China' },
+      { coordinates: [30.8500, 121.7500], text: 'Transport (Yangshan Port, Shanghai, China)' },  // Specific Yangshan Port coordinates
+      { coordinates: [43.30, 5.37], text: 'Transport (Marseille Port, France)' }    
+  ], []);
+
+
   useEffect(() => {
-    const positions: Array<LatLngExpression> = [
-      [51.505, -0.09],
-      [52.505, -0.09],
-      [53.505, -0.09],
-      [54.505, -0.09],
-      [55.505, -0.09],
-    ];
 
     if (mapRef.current && scrollPosition >= 0 && scrollPosition < positions.length * 1000) {
+      console.log(scrollPosition);
       const index = Math.floor(scrollPosition / 1000);
-      mapRef.current.panTo(positions[index]);
+      mapRef.current.panTo(positions[index].coordinates);
       setCurrentOverlay(mapContent[index].Content);
     }
-  }, [scrollPosition, mapRef]);
+  }, [scrollPosition, mapRef, positions]);
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>
@@ -104,9 +110,11 @@ const MapComponent = () => {
         zoomControl={false}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={position}>
-          <Popup >TEST</Popup>
-        </Marker>
+          {positions.map((position, index) => (
+            <Marker key={index} position={position.coordinates}>
+              <Popup >{position.text}</Popup>
+            </Marker>
+          ))}
         <MapConsumer />
       </MapContainer>
     </div>
