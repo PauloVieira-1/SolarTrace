@@ -19,8 +19,8 @@ const mapContent = [
         "Index": 0,
         "Content": 
         <>
-            <div style={{ ...overlayStyle }}>
-                <h3>Scroll Down</h3>
+            <div style={{ ...overlayStyle, textAlign: "center"}}>
+                <h3>Scroll Down or Use Arrows</h3>
                 <div className="text-center d-flex justify-content-center mb-4 p-4">
                     <img src={Hand} className="img-fluid" style={{ width: "50px", height: "50px" }} />
                 </div>

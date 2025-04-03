@@ -2,6 +2,7 @@ import Map from "../Components/Map"
 import { Row } from "react-bootstrap"
 import Background from "../assets/background1.png"
 import ButtonComponent from "../Components/Button.tsx"
+import SupplyChainOverview from "../Components/SupplyChainOverview.tsx"
 
 function Process() {
     return (
@@ -29,7 +30,7 @@ function Process() {
         </ButtonComponent>
     </div>
 </div>
-
+        <SupplyChainOverview></SupplyChainOverview>
         <div  className="d-flex flex-column align-items-center mb-0 mt-4">
             <Row className="d-flex justify-content-center align-items-center w-100">
             </Row>
