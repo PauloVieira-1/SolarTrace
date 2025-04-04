@@ -31,9 +31,9 @@ const supplyChainData = [
 const SupplyChainOverview = () => {
     return (
         <Container fluid className="py-5 px-5" style={{ backgroundColor: "#E6F4E6" }}>
-            <Row className="text-center mb-4">
+            <Row className="text-center mb-4 text-primary p-4">
                 <Col>
-                    <h2 className="fw-bold">Supply Chain Overview</h2>
+                    <h1 className="fw-bold">Supply Chain Overview</h1>
                     <p className="lead">A detailed look at each stage of our solar panel production and distribution.</p>
                 </Col>
             </Row>
@@ -42,9 +42,9 @@ const SupplyChainOverview = () => {
                     <Col key={index} md={6} lg={3} className="mb-4">
                         <Card className="text-center border-0 shadow-sm p-3 rounded-4" style={{ backgroundColor: "#F4FAF4", minHeight: "100%" }}>
                             <Card.Body>
-                                <div className="mb-3 text-success">{stage.icon}</div>
-                                <Card.Title className="fw-bold">{stage.title}</Card.Title>
-                                <Card.Subtitle className="text-muted mb-2">{stage.location}</Card.Subtitle>
+                                <div className="mb-3 text-primary">{stage.icon}</div>
+                                <Card.Title className="fw-bold pt-2">{stage.title}</Card.Title>
+                                <Card.Subtitle className="text-muted mb-2 pb-2">{stage.location}</Card.Subtitle>
                                 <Card.Text>{stage.description}</Card.Text>
                             </Card.Body>
                         </Card>

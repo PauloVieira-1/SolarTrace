@@ -42,3 +42,22 @@
     color: #fff;
   }
 
+
+  .green {
+    fill: #1C4248;
+  }
+
+  .custom-button{
+    color: white;
+  }
+
+  .custom-button:hover {
+    background-color: rgba(219, 235, 221, 1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1.05);
+    color: #1C4248;
+  }
+
+  .remove-border{
+    border: none;
+  }
