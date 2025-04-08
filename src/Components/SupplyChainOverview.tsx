@@ -30,8 +30,8 @@ const supplyChainData = [
 
 const SupplyChainOverview = () => {
     return (
-        <Container fluid className="py-5 px-5" style={{ backgroundColor: "#E6F4E6" }}>
-            <Row className="text-center mb-4 text-primary p-4">
+        <Container fluid className="py-5 px-5" style={{ backgroundColor: "#E6F4E6", minHeight: "90vh" }}>
+            <Row className="text-center mb-4 text-primary p-4 mt-5">
                 <Col>
                     <h1 className="fw-bold">Supply Chain Overview</h1>
                     <p className="lead">A detailed look at each stage of our solar panel production and distribution.</p>

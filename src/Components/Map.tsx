@@ -23,6 +23,10 @@ const useMapInstance = () => {
 
 const MapComponent = () => {
   const scrollPosition: number = useScrollPosition();
+
+  const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
+  const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
+
   const { mapRef, MapConsumer } = useMapInstance();
   const [index, setIndex] = useState(0);
   const currentOverlay = useMemo(() => mapContent[index].Content, [index]);
@@ -45,13 +49,16 @@ const MapComponent = () => {
   );
 
   useEffect(() => {
-    if (mapRef.current && scrollPosition >= 0 && scrollPosition < positions.length * 1000) {
-      const index = Math.floor(scrollPosition / 1000);
-      mapRef.current.panTo(positions[index].coordinates);
-      setIndex(index);
+    if (mapRef.current && scrollPosition >= 1900 && scrollPosition < positions.length * 1000) {
+      if (scrollPosition > previousScrollPosition) {
+        setCurrentScrollPosition(scrollPosition);
+        const index = Math.min(Math.floor(scrollPosition / 1000), positions.length - 1);
+        setIndex(index);
+        mapRef.current.panTo(positions[index].coordinates);
+      }
+      setPreviousScrollPosition(scrollPosition);
     }
-  }, [scrollPosition, mapRef, positions]);
-
+  }, [scrollPosition, mapRef, positions, previousScrollPosition, currentScrollPosition]);
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>
@@ -77,7 +84,7 @@ const MapComponent = () => {
           }}
           style={{ background: "transparent", border: "none" }}
         >
-          <img src={ArrowLeft} alt="Previous" style={{ width: "50px", height: "50px" }} />
+          <img src={ArrowLeft} alt="Previous" style={{ width: "50px", height: "50px" }} className="hover-effect-s"/>
         </button>
         <button
           onClick={() => {
@@ -89,7 +96,7 @@ const MapComponent = () => {
           }}
           style={{ background: "transparent", border: "none" }}
         >
-          <img src={ArrowRight} alt="Next" style={{ width: "50px", height: "50px" }} />
+          <img src={ArrowRight} alt="Next" style={{ width: "50px", height: "50px" }} className="hover-effect-s"/>
         </button>
       </div>
       <MapContainer

@@ -25,7 +25,7 @@ function Process() {
         <p className="mt-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti neque animi pariatur facilis quos odio sint minima laudantium numquam autem.
         </p>
-        <ButtonComponent className="btn btn-primary mt-3 m-100" variant="secondary">
+        <ButtonComponent className="btn btn-primary mt-3 m-100" variant="secondary" onClick={() => {window.scrollTo({top: 1500, behavior: "smooth"})}}>
             Learn More
         </ButtonComponent>
     </div>

@@ -24,6 +24,14 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
+.hover-effect-s{
+  transition: transform 0.3s ease-in-out 0s;
+}
+
+.hover-effect-s:hover {
+  transform: scale(1.1);
+}
+
 
 #map { max-height: 85vh;
     width: 100%;

@@ -1,9 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "../Components/Button";
+import Footer from "../Components/Footer";
 
 function HomePage() {
 	return (
+		<>
 		<div className="bg-light pt-3 pb-5" style={{ height: "90vh" }}>
 			<div className="text-center my-5">
 				<h3 className="fw-bold text-primary">Explore Our Available Tools</h3>
@@ -45,6 +47,9 @@ function HomePage() {
 				</Container>
 			</div>
 		</div>
+		<Footer />
+		</>
+
 	);
 }
 

@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Footer from "./Components/Footer";
 import NavbarComponent from "./Components/Navbar";
 import Course from "./Pages/Course";
 import HomePage from "./Pages/HomePage";
@@ -16,7 +15,6 @@ function App() {
 				<Route path="/partners" element={<Partners />} />
 				<Route path="/process" element={<Process />} />
 			</Routes>
-			{/* <Footer /> */}
 		</>
 	);
 }

@@ -1,9 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 import CustomCard from "../Components/CustomCard";
 import { collaborators } from "../other/collaborators";
+import Footer from "../Components/Footer";
+
 
 function Partners() {
     return (
+        <>
         <div className="bg-light pt-3" style={{ minHeight: "90vh" }}>
             <div className="text-center my-5">
                 <h3 className="fw-bold text-primary">Find out More About our Collaborators</h3>
@@ -17,12 +20,14 @@ function Partners() {
                                 name={collaborator.name} 
                                 imgSrc={collaborator.imgSrc} 
                                 onClick={() => {}} 
-                            />
+                                />
                         </Col>
                     ))}
                 </Row>
             </Container>
         </div>
+        <Footer />
+        </>
     );
 }
 
