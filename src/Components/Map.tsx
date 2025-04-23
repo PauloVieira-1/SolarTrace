@@ -9,7 +9,7 @@ import ArrowRight from "../assets/arrow-right-circle-fill.svg";
 
 type LatLngExpression = [number, number];
 
-const position: LatLngExpression = [51.505, -0.09];
+const position: LatLngExpression =[51.89, 5.43];
 
 const useMapInstance = () => {
   const mapRef = useRef<Map>(null);
@@ -101,7 +101,7 @@ const MapComponent = () => {
       </div>
       <MapContainer
         center={position}
-        zoom={13}
+        zoom={10}
         style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={false}
         zoomControl={false}
