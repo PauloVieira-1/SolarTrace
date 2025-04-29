@@ -101,7 +101,7 @@ const MapComponent = () => {
       </div>
       <MapContainer
         center={position}
-        zoom={10}
+        zoom={9}
         style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={false}
         zoomControl={false}

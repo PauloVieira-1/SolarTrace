@@ -1,32 +1,33 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { FaIndustry, FaTruck, FaWarehouse, FaSolarPanel } from "react-icons/fa";
+import { FaIndustry, FaTools, FaShip, FaSolarPanel } from "react-icons/fa";
 
 const supplyChainData = [
     {
-        title: "Raw Material Extraction",
+        title: "Polysilicon Production",
         location: "Qinghai Province, China",
-        description: "Polysilicon is produced using hydrochloration, distillation, and CVD processes. 85% of the electricity used comes from renewable sources.",
+        description: "Asia Silicon converts metallurgical-grade silicon into high-purity polysilicon using hydrochloration and CVD. 85% of the facility’s power comes from renewable sources, mainly hydropower.",
         icon: <FaIndustry size={50} />
     },
     {
-        title: "Transport to Europe",
-        location: "China → France → Netherlands",
-        description: "Solar panels are shipped via sea and then transported by truck. Emissions breakdown: 0.775 kg CO₂-eq (shipping), 0.148 kg CO₂-eq (trucking).",
-        icon: <FaTruck size={50} />
+        title: "Module Assembly",
+        location: "Jiangsu Xuzhou & Sichuan Yibin, China",
+        description: "High-efficiency TOPCon cells are laminated into solar panels with aluminum framing and junction boxes. Material recycling rate reaches 45% during production.",
+        icon: <FaTools size={50} />
     },
     {
-        title: "Warehousing & Distribution",
-        location: "France",
-        description: "The solar panels are stored and prepared for last-mile distribution to installation sites across Europe.",
-        icon: <FaWarehouse size={50} />
+        title: "Intercontinental Transport",
+        location: "China → Fos-sur-Mer, France → Netherlands",
+        description: "Panels are shipped by sea to France, then trucked to final destinations. Emissions per 1m²: 0.775 kg CO₂-eq (shipping), 0.148 kg CO₂-eq (trucking).",
+        icon: <FaShip size={50} />
     },
     {
-        title: "Final Product Installation",
+        title: "Final Delivery & Installation",
         location: "Netherlands",
-        description: "Solar panels are installed with a 30-year service life. Each panel is traceable using serial codes and QR integration.",
+        description: "Solar panels are installed with a 30-year lifespan and 80% power retention. Each panel is fully traceable from module to polysilicon origin via serial and QR code tracking.",
         icon: <FaSolarPanel size={50} />
     }
 ];
+
 
 const SupplyChainOverview = () => {
     return (

@@ -1,11 +1,12 @@
 import Hand from "../assets/hand-index-thumb (1).svg";
 import Arrow from "../assets/arrow-right.svg";
+import Panel from "../assets/Panel.png"
 
 const overlayStyle : React.CSSProperties = {
     position: "absolute",
     top: "30px",
     left: "30px",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.65)",
     color: "white",
     padding: "10px 20px",
     borderRadius: "8px",
@@ -24,7 +25,8 @@ const mapContent = [
                 <div className="text-center d-flex justify-content-center mb-4 p-4">
                     <img src={Hand} className="img-fluid" style={{ width: "50px", height: "50px" }} />
                 </div>
-                <p>Follow and observe our production process</p>
+                <p className="fs-5">Follow and observe our production process</p>
+                <p className="fw-bold fs-6">* Points do not represent precise locations</p>
             </div>
             <div style={{ position: "absolute", bottom: "30px", right: "30px" }}>
                 <img src={Arrow} className="img-fluid" style={{ width: "100px", height: "100px", animation: "bounce 2s infinite alternate" }} />
@@ -59,7 +61,8 @@ const mapContent = [
                 <h3>Ingot Manufacturing</h3>
                 <p><strong>Location:</strong> Baotou, Inner Mongolia, China</p>
                 <p>Polysilicon is melted and crystallized into monocrystalline ingots using the Czochralski method.</p>
-                <p>The facility’s ESG certification (SA8000) is in progress.</p>
+                <p>The facility has 100 GW of annual ingot production capacity across 10 factories, each equipped with around 560 production machines. </p>
+                <img src={Panel} alt="Solar Panel" className="img-fluid my-4" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
             </div>
         </>
     },
