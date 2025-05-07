@@ -19,7 +19,8 @@ function Partners() {
                             <CustomCard 
                                 name={collaborator.name} 
                                 imgSrc={collaborator.imgSrc} 
-                                onClick={() => {}} 
+                                desc={collaborator.description}
+                                onClick={() => window.open(collaborator.link, "_blank")} 
                                 />
                         </Col>
                     ))}

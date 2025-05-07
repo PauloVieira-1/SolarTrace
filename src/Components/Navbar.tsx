@@ -26,9 +26,6 @@ function NavbarComponent() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className='ms-auto'>
             <Nav.Link href="/" style={navTextStyle}>Home</Nav.Link>
-            <Nav.Link eventKey={2} href="" style={navTextStyle}>
-              About Us
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
