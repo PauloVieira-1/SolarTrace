@@ -23,7 +23,7 @@ function Process() {
     >
    <h1>Explore How SolarTrace <br /> Distributes Its Solar Panels</h1>
 <p className="mt-3">
-    From raw polysilicon production in Qinghai, China, to final delivery in the Netherlands, Solarwatt ensures traceability and sustainability across every phase of its supply chain—including renewable-powered manufacturing, low-carbon certifications, and efficient intercontinental transport.
+    From raw polysilicon production in Qinghai, China, to final delivery in the Netherlands, Solarwatt ensures traceability and sustainability across every phase of its supply chain.
 </p>
 <ButtonComponent className="btn btn-primary mt-3 m-100" variant="secondary" onClick={() => {window.scrollTo({top: 1500, behavior: "auto"})}}>
             Learn More

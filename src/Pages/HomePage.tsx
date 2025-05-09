@@ -47,6 +47,31 @@ function HomePage() {
 				</Container>
 			</div>
 		</div>
+		<div className="d-flex justify-content-center mt-4">
+  <Container
+    className=" text-center rounded-5 mx-5 py-4 px-5 text-white bg-secondary"
+  >
+    <Row className="pb-3">
+      <div className="px-4">
+        <h4 className="fw-bold">Download Solarwatt's SDG Compliance Report</h4>
+        <p className="fw-light">
+          Discover how Solarwatt contributes to the UN Sustainable Development Goals.
+        </p>
+      </div>
+    </Row>
+    <Row className="justify-content-center">
+      <Col xs={12} md={6}>
+        <a href="/solarwatt_sdg_compliance_report.pdf" download className="text-decoration-none">
+          <Button className="btn w-100" variant="outline-light">
+            Download Report
+          </Button>
+        </a>
+      </Col>
+    </Row>
+  </Container>
+</div>
+
+
 		<Footer />
 		</>
 
