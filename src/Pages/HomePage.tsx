@@ -6,9 +6,9 @@ import Footer from "../Components/Footer";
 function HomePage() {
 	return (
 		<>
-		<div className="bg-light pt-3 pb-5" style={{ height: "90vh" }}>
+		<div className="bg-light pt-3 pb-5 px-3" style={{ height: "100vh" }}>
 			<div className="text-center my-5">
-				<h3 className="fw-bold text-primary">Explore Our Available Tools</h3>
+				<h3 className="fw-bold text-primary mt-5">Explore Our Available Tools</h3>
 				<h6 className="fw-light text-secondary">
 					Understand Your Solarwatt Products Better With SolarTrace
 				</h6>
@@ -21,7 +21,7 @@ function HomePage() {
 							<h5 className="fw-light">Solar Tracking Service by Solarwatt</h5>
 						</div>
 					</Row>
-					<Row className="pb-4 px-5 mx-5">
+					<Row className="pb-4 px-5 mx-1">
 						<Col xs={12} md={4} className="mb-3 text-center">
 							<Link to="/course">
 								<Button className="btn w-100" variant="secondary">
@@ -49,7 +49,7 @@ function HomePage() {
 		</div>
 		<div className="d-flex justify-content-center mt-4">
   <Container
-    className=" text-center rounded-5 mx-5 py-4 px-5 text-white bg-secondary"
+    className=" text-center rounded-5 mx-5 py-4 px-5 text-white bg-secondary mt-5"
   >
     <Row className="pb-3">
       <div className="px-4">

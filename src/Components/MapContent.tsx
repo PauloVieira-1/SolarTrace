@@ -108,9 +108,9 @@ const mapContent = [
         <>
             <div style={{ ...overlayStyle }}>
                 <h3>Transport to Europe</h3>
-                <p><strong>Route:</strong> China → France → Netherlands</p>
+                <p><strong>Route:</strong> China → Rotterdam → Tiel</p>
                 <p>Solar panels are shipped via sea and then transported by truck.</p>
-                <p>Emissions breakdown: 0.775 kg CO₂-eq (shipping), 0.148 kg CO₂-eq (trucking).</p>
+                <p>Road Transport Emissions from Rotterdam to Tiel: 0.159 kg CO₂-eq per panel</p>
             </div>
         </>
     },
@@ -119,10 +119,10 @@ const mapContent = [
         "Content": 
         <>
             <div style={{ ...overlayStyle}}>
-                <h3>Arrival at Marseille Port, France</h3>
-                <p>Solar panels are unloaded at the Marseille port, a key European logistics hub.</p>
+                <h3>Arrival at Rotterdam Port</h3>
+                <p>Solar panels are unloaded at the Rotterdam port, a key European logistics hub.</p>
                 <p>From here, they are transported via low-emission trucking to their final destinations.</p>
-                <p>Emissions breakdown: 0.775 kg CO₂-eq (shipping), 0.148 kg CO₂-eq (trucking).</p>
+                <p>Shipping Emissions from China to Rotterdam: 2.23 kg CO₂-eq per panel.</p>
             </div>
         </>
     }    
