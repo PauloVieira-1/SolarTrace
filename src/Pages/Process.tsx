@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap"
 import Background from "../assets/background1.png"
 import ButtonComponent from "../Components/Button.tsx"
 import SupplyChainOverview from "../Components/SupplyChainOverview.tsx"
+import MAPIMAGE from "../assets/MAPIMAGE.jpg"
 
 function Process() {
     return (
@@ -31,6 +32,9 @@ function Process() {
     </div>
 </div>
         <SupplyChainOverview></SupplyChainOverview>
+<div>
+    <img src={MAPIMAGE} alt="" style={{objectFit:"cover", width:"100%", height:"auto"}}/>
+</div>
         <div  className="d-flex flex-column align-items-center mb-0 mt-4">
             <Row className="d-flex justify-content-center align-items-center w-100">
             </Row>
