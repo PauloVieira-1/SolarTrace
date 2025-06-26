@@ -16,8 +16,8 @@ const supplyChainData = [
     },
     {
         title: "Intercontinental Transport",
-        location: "China → Roterdam → Tiel",
-        description: "Panels are shipped by sea to France, then trucked to final destinations. Emissions per 1m²: 0.775 kg CO₂-eq (shipping), 0.148 kg CO₂-eq (trucking).",
+        location: "China → Rotterdam → Tiel",
+        description: "Panels are shipped to Rotterdam via sea, then trucked to final destinations. Emissions per 1m²: 0.775 kg CO₂-eq (shipping), 0.148 kg CO₂-eq (trucking).",
         icon: <FaShip size={50} />
     },
     {

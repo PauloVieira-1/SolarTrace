@@ -43,7 +43,7 @@ const MapComponent = () => {
       { coordinates: [30.57, 104.06], text: "Solar Cell Production - Sichuan, China" },
       { coordinates: [32.06, 118.78], text: "Module Assembly - Jiangsu, China" },
       { coordinates: [30.85, 121.75], text: "Transport (Yangshan Port, Shanghai, China)" },
-      { coordinates: [43.3, 5.37], text: "Transport (Marseille Port, France)" },
+      { coordinates: [51.89, 4.28], text: "Transport to Europe (Rotterdam Port, Netherlands)" },
     ],
     []
   );
