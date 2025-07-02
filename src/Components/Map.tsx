@@ -6,10 +6,11 @@ import useScrollPosition from "./useScrollPosition";
 import mapContent from "./MapContent";
 import ArrowLeft from "../assets/arrow-left-circle-fill.svg";
 import ArrowRight from "../assets/arrow-right-circle-fill.svg";
+import Button from "react-bootstrap/Button";
 
 type LatLngExpression = [number, number];
 
-const position: LatLngExpression =[51.89, 5.43];
+const position: LatLngExpression = [51.89, 5.43];
 
 const useMapInstance = () => {
   const mapRef = useRef<Map>(null);
@@ -29,16 +30,15 @@ const MapComponent = () => {
 
   const { mapRef, MapConsumer } = useMapInstance();
   const [index, setIndex] = useState(0);
+  const [showContent, setShowContent] = useState(true); // NEW STATE
+
   const currentOverlay = useMemo(() => mapContent[index].Content, [index]);
 
-
-  const positions = useMemo<(
-    { coordinates: LatLngExpression; text: string }[]
-  )>(
+  const positions = useMemo<{ coordinates: LatLngExpression; text: string }[]>(
     () => [
       { coordinates: [51.89, 5.43], text: "Solarwatt Tiel Facility, Netherlands (Starting Position)" },
       { coordinates: [36.56, 101.43], text: "Raw Material Extraction - Qinghai, China" },
-      { coordinates: [40.65, 109.84], text: "Ingot Manufacturing - Baotou, Inner Mongolia, China" },
+      { coordinates: [22.279004721622382, 113.55879733278165], text: "Ingot Manufacturing - Guangdong, China" },
       { coordinates: [32.06, 118.78], text: "Wafer Slicing - Jiangsu, China" },
       { coordinates: [30.57, 104.06], text: "Solar Cell Production - Sichuan, China" },
       { coordinates: [32.06, 118.78], text: "Module Assembly - Jiangsu, China" },
@@ -62,7 +62,26 @@ const MapComponent = () => {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>
-      {currentOverlay}
+      <Button
+        onClick={() => setShowContent((prev) => !prev)}
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          zIndex: 1100,
+          padding: "10px 15px",
+          border: "1px solid #ccc",
+          borderRadius: "23px",
+          backgroundColor: "#E5704D",
+          cursor: "pointer",
+
+        }}
+      >
+        {showContent ? "Hide Info" : "Show Info"}
+      </Button>
+
+      {showContent && currentOverlay}
+
       <div
         style={{
           position: "absolute",
@@ -84,7 +103,7 @@ const MapComponent = () => {
           }}
           style={{ background: "transparent", border: "none" }}
         >
-          <img src={ArrowLeft} alt="Previous" style={{ width: "50px", height: "50px" }} className="hover-effect-s"/>
+          <img src={ArrowLeft} alt="Previous" style={{ width: "50px", height: "50px" }} className="hover-effect-s" />
         </button>
         <button
           onClick={() => {
@@ -96,9 +115,11 @@ const MapComponent = () => {
           }}
           style={{ background: "transparent", border: "none" }}
         >
-          <img src={ArrowRight} alt="Next" style={{ width: "50px", height: "50px" }} className="hover-effect-s"/>
+          <img src={ArrowRight} alt="Next" style={{ width: "50px", height: "50px" }} className="hover-effect-s" />
         </button>
       </div>
+
+      {/* Map */}
       <MapContainer
         center={position}
         zoom={9}
